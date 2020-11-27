@@ -1,0 +1,452 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Fanofpixels' Multi-Tower Kit V2 Guide</title>
+		<style>
+			body {
+				font-family: verdana;
+				background-color: #000000;
+				color: #FFFFFF;
+			}
+			a {
+				color: rgb(246, 230, 103);
+			}
+			code {
+				background-color: #2A2A2A;
+				border-radius: 4px;
+				padding: 3px;
+			}
+			h1 {
+				text-align: center;
+			}
+			#main {
+				background-color: #333333;
+				width: 33.333%;
+				padding: 15px;
+				text-align: left;
+			}
+			.TableOfContents {
+				background-color: #272727;
+				border: #E2E2E2 solid 2px;
+				width: 75%;
+				content-align: left;
+				padding: 5px;
+				margin: 10px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<div id="main">
+				<h1>Fanofpixels' Multi-Tower Kit</h1><hr>
+				<div class="TableOfContents">
+					<h5>Table of Contents</h2>
+					<ul>
+						<li><a href="#What">What is this thing?</a></li>
+						<li><a href="#Supported">Supported Kits and Tested Towers</a><ul>
+							<li><a href="#52Note">A Note About v5.2</a></li>
+						</ul></li>
+						<li><a href="#Setup">Setting things up</a><ul>
+							<li><a href="#SetupNew">Creating a Place From Scratch</a></li>
+							<li><a href="#SetupExisting">Adding to an Existing Place</a></li>
+							<li><a href="#SetupImport">Importing a Tower</a><ul>
+								<li><a href="#SetupPortal">Creating a Portal</a></li>
+								<li><a href="#SetupItemBarriers">Adding Item Barriers</a></li>
+								
+							</ul></li>
+						</ul></li>
+						<li><a href="#Config">Configurating The Kit</a><ul>
+							<li><a href="#ConfigDebug">Debug Mode</a></li>
+							<li><a href="#ConfigWinpad">Winpad Animation</a></li>
+							<li><a href="#ConfigGui">Reformatting the GUI</a></li>
+						</ul></li>
+						<li><a href="#ListOfPortals">List of Portals</a><ul>
+							<li><a href="#JToHDC">Juke's Towers of Hell Difficulty Chart</a></li>
+							<li><a href="#JETDC">JToH's Easiest Towers Difficulty Chart</a></li>
+							<li><a href="#JHTDC">JToH's Hardest Towers Difficulty Chart</a></li>
+							<li><a href="#UDDC">Universe-Devouring Difficulty Chart</a></li>
+							<li><a href="#JJTDC">JToH's Joke Towers Difficulty Chart</a></li>
+							<li><a href="#MiscPortals">Miscellaneous Portals</a></li>
+						</ul></li>
+					</ul>
+				</div>
+				<h2 id="What">What is this thing?</h2>
+				<p>fanofpixels' Multi-Tower Kit is a kit that is meant 
+				to make the creation of JToH fangames easy, as this
+				kit supplies the scripts nessasary to make things like
+				winpads and portals actually work.</p>
+				
+				<i>If you are having troubles with something, feel free 
+				to DM me on Discord: Ethan Pixelate#1822, though im not 
+				always online.</i>
+				
+				<h2 id="Supported">Supported Kits and Tested Towers</h2>
+				Fanofpixels' Multi-Tower Kit supports importing towers from the 
+				following kits:
+				<ul>
+					<li>JToH Tower Creation Kit v4</li>
+					<li>JToH Tower Creation Kit v5</li>
+					<li>JToH Tower Creation Kit v5.1</li>
+					<li>JToH Tower Creation Kit v5.2 <i>(RunRepoScript doesn't break :zomg:)</i></li>
+					<li>JToH Tower Creation Kit v5.3</li>
+					<li>JHT Megacollab Kit v2</li>
+					<li>JToH Kit v8.3</li>
+				</ul>
+				
+				The kit has been tested with the following publicly 
+				available towers:
+				<ul>
+					<li><i>(Works)</i> 7_qz - Tower of Deus Ex Machina</li>
+					<li><i>(Works)</i> fanofpixels - Tower of Forsaken Anemoia</li>
+					<li><i>(Works)</i> fanofpixels - Maybe Eating a True Loaf of Absolute Failure</li>
+					<li><i>(Works)</i> Duskpyramid - Tower of Verdant Entropy</li>
+				</ul>
+				<h3 id="52Note">A Note About v5.2</h3>
+				The JToH Creation Kit v5.2 was known for constantly breaking, 
+				so much so that it caused the release of v5.3. The main 
+				bug was that the new script repository system introduced 
+				would not always load correctly, this multi-tower kit's 
+				COLoader script does not have this problem, becsuse i 
+				fixed it by handling scripts differently than how the 
+				kit's included LocalPartScript does it. However, the 
+				beat blocks still do not work because the kit shipped 
+				with numerous NumberValues missing, so if you are planning on 
+				building a tower from scratch in the multi-tower kit, 
+				either find what values they use, or just use 5.3.
+				
+				<h2 id="Setup">Setting things up</h2>
+				<p>Now that you have a basic overview of this kit, its 
+				time to learn how to actually use this kit. In order 
+				to actually use this kit, you are going to need access 
+				to the kit itself, if you got this guide pre-packaged 
+				with the .rbxl file, then congrats, you already have 
+				the place and can move on to either setting it up from 
+				scratch, or adding it to an existing place. However, if 
+				you dont have the rbxl, the original copy is uncopylocked, 
+				and you are fully allowed to download a copy from <a href="https://www.roblox.com/games/5961403949/">here</a></a>, 
+				just click the 3 dots and press "Edit".</p>
+				<h3 id="SetupNew">Creating a Place From Scratch</h3>
+				<p>If you have decided to install the multi-tower kit 
+				from scratch, then you are reading the right section. 
+				To set up the kit from scratch, follow the following steps:</p>
+
+				<ol>
+					<li>First, grab a copy of the template place if you 
+					have not already, then you need to publish it as your 
+					own, to do that, hold <code>Alt+Shift+P</code>, and 
+					the window for publishing should pop up, enter the 
+					basic info, and hit publish.</li>
+					<li>Now, you must make sure the actual place is 
+					using R6 avatar types, to do this, go to the home 
+					tab of studio, and click on the button that reads 
+					"Game Settings", a window should pop up, click on 
+					the Avatar tab and there should be a multiple choice 
+					box for the avatar type, and make sure R6 is selected.</li>
+					<li>Have fun creating the lobby! And altough it 
+					actually doesn't matter, it is reccomended to keep 
+					parts of the lobby itself in the <code>workspace.Lobby</code> 
+					folder, as it keeps things tidy.</li>
+					<li>When you want to actually import towers into the 
+					realm, see <a href="StepImport">Importing a Tower</a>.</li>
+				</ol>
+				
+				<h3 id="SetupExisting">Adding to an Existing Place</h3>
+				<p>It is likely that you already have a place set up, 
+				but you want to install the kit ontop of said place. 
+				This section is dedicated to exactly that, and is a 
+				fairly straightforward process. This guide assumes that 
+				all towers already in the place resemble the kit, meaning 
+				that the kit includes a <code>ClientSidedObjects</code> 
+				folder, an <code>Obby</code> folder, a <code>Frame</code> 
+				model, and a <code>SpawnLocation</code>, if the tower does 
+				not have a SpawnLocation, then dont panic, it's not 
+				hard to create a new one, and if you are going to make 
+				a new spawn, use a <code>Part</code> instead of a <code>SpawnLocation</code>,
+				this will make things easier.</p>
+				
+				<ol>
+					<li>Open up the template place and the existing place.</li>
+					<li>Copy everything inside of the template place's
+					<code>ReplicatedStorage</code>, and paste it inside 
+					of the target place's <code>ReplicatedSorage</code></li>
+					<li>In the target place's workspace, create 3 new 
+					<code>Folder</code>s, and name them the following 
+					(Case sensitive):<ul>
+						<li>"Towers"</li>
+						<li>"Portals"</li>
+						<li>"Markers"</li>
+					</ul></li>
+					<li>If your place already contains a <code>LocalPartScript</code>, 
+					then either delete, or archive it as it will be replaced.</li>
+					<li>In the template place's <code>StaterPlayerScript</code>, 
+					copy the following scripts and paste them in the target place's 
+					<code>StarterPlayerScripts</code>:<ul>
+						<li>COLoader</li>
+						<li>GameAnnouncements</li>
+						<li>OldButtons</li>
+					</ul></li>
+					<li>In the template place, copy the following scripts 
+					from <code>ServerScriptService</code> and paste it 
+					in the target place's <code>ServerScriptService</code>:
+					<ul>
+						<li>ClientObjectStorage</li>
+						<li>Pads</li>
+						<li>MusicModule</li>
+					</ul>The MusicModule isn't mandatory, but using the 
+					one inluded in the template place has an extra feature 
+					that will be covered later</li>
+					<li>Create a folder in <code>ServerStorage</code> and 
+					name it "TowerClientObjects"</li>
+					<li>Copy the <code>WinpadParticles</code> from the 
+					same storage and paste it in the target place's 
+					<code>ServerStorage</code></li>
+				</ol>
+				
+				<h3 id="SetupImport">Importing a Tower</h3>
+				<p>Now its time for arguably the most important part of 
+				this entire kit, importing towers. If you are importing 
+				an already-made tower, just import it's model into the 
+				workspace and follow the steps below. If you are building 
+				a tower from scratch, then import a kit (Preferably the 
+				latest official JToH kit, which as im writing this is v5.3), 
+				delete the "Scripts" and "Testing Stuff" models, follow 
+				the steps below, and start building.</p>
+				
+				<ol>
+					<li>Rename the kit folder to the tower's acronym, 
+					this is important as that is how it will be referenced 
+					internally and what is displayed at the top of the screen.</li>
+					<li>Convert the <code>SpawnLocation</code> to a normal 
+					<code>Part</code>, while reserving the name "SpawnLocation", 
+					either do it manually by deleting the SpawnLocation and 
+					inserting a new part to take it's place, or use a plugin 
+					like <a href="https://www.roblox.com/library/906681627/">Quenty's Class Converter</a>.</li>
+					<li>Insert a <code>StringValue</code> into the folder 
+					and name it "ProperName", and set it's value to the 
+					proper, non-acronym name of the tower (E.g. "Tower of Hecc",
+					 "Tower of Screen Punching", "Not Even A Tower", etc.)</li>
+					<li>Insert an <code>IntValue</code> into the folder 
+					and name it "BadgeID", set it's value to the ID of the 
+					badge that will be rewarded if completed, if your tower
+					does not reward a badge, leave it's value at 0</li>
+					<li>Locate the <code>WinPad</code> in the tower's Obby folder, 
+					and insert an <code>ObjectValue</code> into it. Name the 
+					ObjectValue "KitFolder", and set it's value to the 
+					kit folder itself.</li>
+					<li>If you set up the tower correctly, then you can 
+					play the game, and enter "/loadtower [acronym]" into 
+					the chat (replace the "[acronym]" with whatever you renamed 
+					the kit folder to), and the tower should load without problems.</li>
+				</ol>
+				
+				<h4 id="SetupPortal">Creating a Portal</h4>
+				<p>As you can imagine, using <code>/loadtower</code> isn't 
+				the most elegant way of starting a tower, normally you would 
+				walk through a portal and start playing instead of using 
+				some cryptic debug command that shouldn't even be enabled 
+				in the final version.</p>
+				
+				<ol>
+					<li>Either clone an existing portal, or insert a Part 
+					into the workspace's "Portals" folder</li>
+					<li>If you decided to insert a part instead of cloning 
+					an existing portal, insert a <code>Stringvalue</code> 
+					into the new part an name it "TowerPortal"</li>
+					<li>Now whether you needed to follow step 2 or not, 
+					the portal part should contain a StringValue that is 
+					named "TowerPortal", set it's value to the acronym of 
+					the tower it will teleport you to, for example, if i 
+					had a tower which has it's kit folder named "ToH", 
+					then the TowerPortals value should be "ToH".</li>
+				</ol>
+				
+				<h4 id="SetupItemBarriers">Adding Item Barriers</h4>
+				<p>In the template place, there are 2 item barriers, one 
+				of them is a Bootleg Coil item barrier, the other one is 
+				a Vertical Mobility item barrier, functionally, both of 
+				them are identical, they even share the same script, but 
+				are presented as 2 different barriers for convenience. 
+				To implement an item barrier, copy one of the barriers, 
+				and paste it in a tower's <code>ClientSidedObjects</code> 
+				folder, and transform it to whatever position, size, and 
+				orientation you want, to make this barrier appear ingame, 
+				there is a <code>StringValue</code> in the barrier called 
+				"ItemName", set it's value to the name of the tool that 
+				must be equipped to make the item barrier appear.</p>
+				
+				<h2 id="Config">Configurating the Kit</h2>
+				Now that you have set up the kit, there may be some 
+				things you would like to configure certain parts of it.
+				<h3 id="ConfigDebug">Debug Mode</h3>
+				Debug mode is a special mode that is enabled by default, 
+				and gives you extra information over what is happening 
+				behind the scenes, and grants you the following abilities:
+				<ul>
+					<li>the /loadtower command</li>
+					<li>the /unloadtower command</li>
+					<li>the /unloadall command</li>
+				</ul>
+				To disable/enable this mode, simply find the BoolValue 
+				in <code>game.StarterPlayer.StarterPlayerScripts.COLoader</code> 
+				called "Debug" and set its value depending on whether 
+				you want it on or not.
+				
+				<h3 id="ConfigWinpad">Configuring the Winpads</h3>
+				To adjust properties of the winpad and how it works, open 
+				<code>game.ServerScriptService.Pads</code>, and on lines 
+				6-11 are some variables that you are free to change. 
+				What each variable does is explained by the comments in 
+				that script. 
+				<h3 id="ConfigGui">Reformatting the GUI</h3>
+				Perhaps the default GUI does not fit your desires, thats 
+				ok, if you want to change things up, its located in 
+				<code>game.StarterPlayer.StarterPlayerScripts.COLoader.LocalGui</code>.
+				The cool thing about how the kit uses the GUI, is that it 
+				does not care whether the used GUI elements are directly under 
+				the ScreenGui instance, meaning you can have a certain TextLabel
+				buried under 50 frames, and it will still work. If you want 
+				to disable a certain GUI element completely with no chance 
+				of ever appearing, most of them can be deleted completely 
+				without problems. Heres a following list of GUI elements 
+				used by the script and the properties that will be overriden:
+				<ul>
+					<li><code>RestartLabel</code>, represents the giant red text that 
+					reads "Restarting..." when you hold R.<ul>
+						<li><code>TextTransparency</code></li>
+						<li><code>TextStrokeTransparency</code></li>
+					</ul></li>
+					<li><code>Timer</code>, represents, well, the timer that shows 
+					how long you have been playing a tower.<ul>
+						<li><code>Text</code></li>
+					</ul></li>
+					<li><code>BoostsUsed</code>, represents the label that appears 
+					if any boost item is equipped<ul>
+						<li><code>Visible</code></li>
+					</ul></li>
+					<li><code>TowerAcronym</code>, displays the acronym of the current 
+					tower being played if any.<ul>
+						<li><code>Text</code></li>
+					</ul></li>
+				</ul>
+				
+				<h2 id="ListOfPortals">List of Portals</h2>
+				<p>In this section, you will be able to get an overview 
+				of every portal included in the kit, while you dont 
+				actually <i>need</i> to have portals look like any of 
+				the provided portals, its still handy to know what each
+				of them actually mean.</p>
+				<h3 id="JToHDC">Juke's Towers of Hell Difficulty Chart</h3>
+				This is the main difficulty chart standard most people
+				stand by, as this is literally <i>the</i> standard set 
+				of portals. It should be noted that Insane and above are
+				 refferred to as the "Soul-Crushing" (or SC for short) 
+				diffitulies, and they represent the pinacle of 
+				difficulty available in JToH, and no SC tower within the 
+				base game allows for boost items (like the Bootleg Coil).
+				<ul>
+					<li><a href="https://jtoh.fandom.com/wiki/Easy">Easy</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Medium">Medium</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Hard">Hard</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Difficult">Difficult</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Challenging">Challenging</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Intense">Intense</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Remorseless">Remorseless</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Insane">Insane</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Extreme">Extreme</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Terrifying">Terrifying</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Catastrophic">Catastrophic</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/TooHard">TooHard</a></li>
+				</ul>
+				<h3 id="JETDC">JToH's Easiest Towers Difficulty Chart</h3>
+				<p>This difficulty chart, or JET for short, is 
+				an unofficial difficulty chart that contains difficulties 
+				that are extremely easy, some of them are to the point 
+				where you dont even need to do anything to win.</p>
+				<ul>
+					<li>Win</li>
+					<li>Unloseable</li>
+					<li>Automatic</li>
+					<li>Joyful</li>
+					<li>Press-A-Key <i>(PAK)</i></li>
+					<li>Climb-A-Truss <i>(CAT)</i></li>
+					<li>Walk-A-Slope <i>(WAS)</i></li>
+					<li>Jumpless</li>
+					<li>Effortlessless</li>
+					<li>Effortless <i>(Was originally apart of JToHDC)</i></li>
+				</ul>
+				<h3>JToH's Hardest Towers Difficulty Chart</h4>
+				<p>This difficulty chart, or JHT for short, is annother 
+				unofficial set of difficulties that delve into the realm
+				of questioning what is actually possible, with "Why" 
+				difficulty being the first difficulty listed that is 
+				actually humanly impossible, and requires special 
+				assistance like TAS in order to be completed. However 
+				this difficulty chart does have it's limits, Malicious 
+				difficulty represents the absolute limit of physical 
+				possibility, anything above goes into the JJTDC.</p>
+				<ul>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Catastrophic">Catastrophic</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Horrific">Horrific</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Unreal">Unreal</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Nil">nil</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/ERRoR">eRRoR</a> <i>(Is currently only semi-official 
+					to this DC)</i></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Why">Why</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/No">No</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/DEATH">DEATH</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/HELL">HELL</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/TARTARUS">TARTARUS</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Unimaginable">Unimaginable</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Omega">Omega</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Aleph-Null">Aleph-Null</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Immeasurable">Immeasurable</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/Malicious">Malicious</a> <i>(Is sometimes named in zalgo text)</i></li>
+				</ul>
+				<h3 id="UDDC">Universe-Devouring Difficulty Chart</h3>
+				<p>This difficulty chart is actually an extension to the 
+				JHTDC by Priistone, and adds 2 new difficulties. However 
+				the actual UDDC adds 5 new difficulties, but 3 of them 
+				are actually borrowed from the JJTDC.</p>
+				<ul>
+					<li>Nullifying <i>(Located in between DEATH and HELL)</i></li>
+					<li>SUFFER <i>(Located in between Omega and Aleph-Null)</i></li>
+				</ul>
+				<h3 id="JJTDC">JToH's Joke Towers Difficulty Chart</h3>
+				<p>As the name would suggest, the JJTDC is an unofficial 
+				difficulty chart that houses joke difficulties, and do 
+				not care about following any real guidelines as to what 
+				they mean, or how towers could be built to suit such 
+				difficulties. There are waaay more difficulties on the 
+				JJTDC than what is listed here, but to add them to the 
+				kit would be a waste of time for me, and frankly i dont 
+				think many people are going to chose much specific 
+				difficulties that are actually on the JJTDC due to how 
+				many difficulties there are, impossible or not.</p>
+				<ul>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Monstrous">Monstrous</a></li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Ultimate">Ultimate</a></li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/System_Error">System Error</a></li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Supreme">Supreme</a></li>
+					<li><a href="https://jtohs-hardest-towers.fandom.com/wiki/RoorXD">RoorXD</a></li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Jesus_Ballin">JesusBallin</a></li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Autism">Autism</a></li>
+					<li><a href="https://jtoh.fandom.com/wiki/Epic">epic </a><i>(Was originally introduced to the JToHDC for april fools 2020)</i></li>
+					<li>TooPrecise</li>
+					<li>Rebirth Easy</li>
+					<li><a href="https://jtohs-joke-towers.fandom.com/wiki/Aleph-cow">Aleph-Cow</a></li>
+				</ul>
+				<h3 id="MiscPortals">Miscellaneous Portals</h3>
+				<p>None of the portals listed here are actually apart of 
+				any difficulty chart, but rather serve a more external 
+				purpose.</p>
+				<ul>
+					<li>Impossible <i>(Marks an actually impossible tower without using a JJTDC difficulty)</i></li>
+					<li>Teleport <i>(Used by JToH's viewing areas)</i></li>
+				</ul>
+			</div>
+		</center>
+	</body>
+</html>
